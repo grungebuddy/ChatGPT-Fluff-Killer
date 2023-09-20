@@ -3,7 +3,7 @@ import re
 
 # Specify the folder containing the .txt files to process.
 # Replace the path with the location where your text files are stored.
-# Use double backslashes (\\) in the folder path.
+# Use double backslashes (\\) in the folder path. Example: C:\\Users\\Me\\textfiles
 folder_path = r'your_file_path'
 
 # Function to remove and replace specific phrases in the text
@@ -63,6 +63,9 @@ def process_files(folder_path):
 
             # Remove and replace phrases in the content
             modified_content = remove_and_replace_phrases(content, phrases_to_remove, phrases_to_replace)
+            
+            # Capitalize the first letter of each sentence as the final step
+            modified_content = re.sub(r"(^|\. )(.)", lambda m: m.group(1) + m.group(2).upper(), modified_content)
 
             # Write the modified content to a new .txt file in the subfolder
             output_file_path = os.path.join(output_folder, filename)
