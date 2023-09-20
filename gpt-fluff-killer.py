@@ -3,6 +3,7 @@ import re
 
 # Specify the folder containing the .txt files to process
 # Note: Replace 'your_folder_path_here' with the actual path to your folder
+# Note: Use '\\' Example: C:\\Users\\Me\\textfiles
 folder_path = r'your_folder_path_here'
 process_files(folder_path)
 
