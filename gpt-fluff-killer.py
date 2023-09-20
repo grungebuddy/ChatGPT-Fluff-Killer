@@ -32,7 +32,6 @@ def process_files(folder_path):
         "lastly",
         "therefore",
         "ultimately",
-        "in addition"
     ]
     
     # Phrases to replace in the text
