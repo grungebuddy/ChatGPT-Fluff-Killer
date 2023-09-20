@@ -5,15 +5,13 @@ import re
 def remove_and_replace_phrases(text, phrases_to_remove, phrases_to_replace):
     # Replace specific phrases throughout the text
     for phrase, replacement in phrases_to_replace.items():
-        text = text.replace(phrase, replacement)
+        regex_replace = re.compile(rf"\b{phrase}\b", re.IGNORECASE)
+        text = regex_replace.sub(replacement, text)
         
     # Remove phrases and handle the beginning of sentences
     for phrase in phrases_to_remove:
-        # If phrase is at the beginning of a sentence, remove it and the following comma
         regex_start = re.compile(rf"^{phrase}, ", re.IGNORECASE)
         text = regex_start.sub("", text)
-        
-        # Remove phrase if it appears elsewhere in the text
         regex_else = re.compile(rf"\s{phrase}(\s|,|\.)", re.IGNORECASE)
         text = regex_else.sub(" ", text)
         
@@ -68,6 +66,5 @@ def process_files(folder_path):
 
 # Specify the folder containing the .txt files to process
 # Note: Replace 'your_folder_path_here' with the actual path to your folder
-# Note: Needs to use '\\'. Example: C:\\Users\\Me\\textfiles
-folder_path = r'your_file_path'
+folder_path = r'your_folder_path_here'
 process_files(folder_path)
