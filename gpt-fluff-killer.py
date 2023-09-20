@@ -1,6 +1,11 @@
 import os
 import re
 
+# Specify the folder containing the .txt files to process
+# Note: Replace 'your_folder_path_here' with the actual path to your folder
+folder_path = r'your_folder_path_here'
+process_files(folder_path)
+
 # Function to remove and replace specific phrases in the text
 def remove_and_replace_phrases(text, phrases_to_remove, phrases_to_replace):
     # Replace specific phrases throughout the text
@@ -63,8 +68,3 @@ def process_files(folder_path):
             output_file_path = os.path.join(output_folder, filename)
             with open(output_file_path, 'w') as f:
                 f.write(modified_content)
-
-# Specify the folder containing the .txt files to process
-# Note: Replace 'your_folder_path_here' with the actual path to your folder
-folder_path = r'your_folder_path_here'
-process_files(folder_path)
