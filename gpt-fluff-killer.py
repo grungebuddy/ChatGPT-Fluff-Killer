@@ -32,6 +32,7 @@ def process_files(folder_path):
         "lastly",
         "therefore",
         "ultimately",
+        "first and foremost"
     ]
     
     # Phrases to replace in the text
@@ -66,6 +67,7 @@ def process_files(folder_path):
                 f.write(modified_content)
 
 # Specify the folder containing the .txt files to process
-# Note: Use double backslashes (\\) in the folder path for Python to interpret it correctly
-folder_path = r'your_folder_path_here'
+# Note: Replace 'your_folder_path_here' with the actual path to your folder
+# Note: Needs to use '\\'. Example: C:\\Users\\Me\\textfiles
+folder_path = r'your_file_path'
 process_files(folder_path)
