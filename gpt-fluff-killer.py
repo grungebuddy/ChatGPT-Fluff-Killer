@@ -5,7 +5,7 @@ import re
 # Specify the folder containing the .txt files to process.
 # Replace the path with the location where your text files are stored.
 # Use double backslashes (\\) in the folder path.
-folder_path = r'C:\\Users\\Jay Pee\\Documents\\test'
+folder_path = r'your_file_path'
 
 # Function to remove and replace specific phrases in the text
 def remove_and_replace_phrases(text, phrases_to_remove, phrases_to_replace):
